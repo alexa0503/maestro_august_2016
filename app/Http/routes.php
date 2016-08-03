@@ -1,7 +1,7 @@
 <?php
 Route::get('/', 'HomeController@index');
 Route::post('info', 'HomeController@info');
-Route::get('lottery', 'HomeController@lottery');
+Route::post('lottery', 'HomeController@lottery');
 Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));
     $request_url = 'http://dev.maestro.com.cn/campaign/api/wechat/share.php?url='.$url;
