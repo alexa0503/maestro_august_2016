@@ -15,21 +15,11 @@ function randomNumb(minNumb, maxNumb) {
 }
 
 var wHeight;
-var orgnilWHeight;
 $(document).ready(function() {
     wHeight = $(window).height();
-	orgnilWHeight = $(window).height();
-	
-    if (wHeight <= 1008) {
-		var bli=wHeight/1008;
+    if (wHeight < 1008) {
         wHeight = 1008;
-		$('.page').css('-webkit-transform','scale('+bli+')');
-		$('.page').css('-webkit-transform-origin','50% 0');
-        $('body').on('touchmove', function(e) {
-            e.preventDefault();
-        });
     } else {
-		$('.page').css('-webkit-transform','scale('+wHeight/1060+')');
         $('body').on('touchmove', function(e) {
             e.preventDefault();
         });
@@ -49,78 +39,86 @@ var preload, preload2, preload3, preload4;
 //定义相关JSON格式文件列表
 function setupManifest() {
     createjs.Sound.alternateExtensions = ["mp3"];
-    createjs.Sound.registerSound({src: "/assets/images/bgm0.mp3",id: "bgm0"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm1.mp3",id: "bgm1"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm2.mp3",id: "bgm2"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm3.mp3",id: "bgm3"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm4.mp3",id: "bgm4"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm5.mp3",id: "bgm5"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm6.mp3",id: "bgm6"});
+    createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm0.mp3",id: "bgm0"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm1.mp3",id: "bgm1"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm2.mp3",id: "bgm2"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm3.mp3",id: "bgm3"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm4.mp3",id: "bgm4"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm5.mp3",id: "bgm5"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm6.mp3",id: "bgm6"});
 
     manifest = [];
-	manifest.push({
-        src: "/assets/images/btn.png"
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page1Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page1Img1.png"
+        src: "/campaign/augsoc1/public/assets/images/page1Img1b.png"
     });
     manifest.push({
-        src: "/assets/images/page1Img1b.png"
+        src: "/campaign/augsoc1/public/assets/images/topArrow.png"
     });
     manifest.push({
-        src: "/assets/images/topArrow.png"
-    });
-    manifest.push({
-        src: "/assets/images/shareNote.png"
+        src: "/campaign/augsoc1/public/assets/images/shareNote.png"
     });
 
     manifest.push({
-        src: "/assets/images/a1/act.png"
+        src: "/campaign/augsoc1/public/assets/images/a1/act.png"
+    });
+    for (var i = 1; i <= 65; i++) {
+        if (i < 10) {
+            manifest.push({
+                src: "/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png"
+            });
+        } else {
+            manifest.push({
+                src: "/campaign/augsoc1/public/assets/images/a2/a" + i + ".png"
+            });
+        }
+    }
+
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page3Img1.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img11.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img12.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img13.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img14.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img15.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/page4Img16.png"
     });
 
     manifest.push({
-        src: "/assets/images/page3Img1.png"
+        src: "/campaign/augsoc1/public/assets/images/page5Img11.png"
     });
     manifest.push({
-        src: "/assets/images/page4Img11.png"
+        src: "/campaign/augsoc1/public/assets/images/page5Img12.png"
     });
     manifest.push({
-        src: "/assets/images/page4Img12.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img13.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img14.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img15.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img16.png"
+        src: "/campaign/augsoc1/public/assets/images/page5Img13.png"
     });
 
     manifest.push({
-        src: "/assets/images/page5Img11.png"
+        src: "/campaign/augsoc1/public/assets/images/page6Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page5Img12.png"
+        src: "/campaign/augsoc1/public/assets/images/page7Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page5Img13.png"
-    });
-
-    manifest.push({
-        src: "/assets/images/page6Img1.png"
+        src: "/campaign/augsoc1/public/assets/images/page8Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page7Img1.png"
-    });
-    manifest.push({
-        src: "/assets/images/page8Img1.png"
-    });
-    manifest.push({
-        src: "/assets/images/page9Img1.png"
+        src: "/campaign/augsoc1/public/assets/images/page9Img1.png"
     });
 
     startPreload();
@@ -128,14 +126,14 @@ function setupManifest() {
 
 function setupManifest2() {
     manifest2 = [];
-    for (var j = 1; j <= 87; j=j+2) {
+    for (var j = 1; j <= 87; j++) {
         if (j < 10) {
             manifest2.push({
-                src: "/assets/images/b1/b0" + j + ".png"
+                src: "/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest2.push({
-                src: "/assets/images/b1/b" + j + ".png"
+                src: "/campaign/augsoc1/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -144,14 +142,14 @@ function setupManifest2() {
 
 function setupManifest3() {
     manifest3 = [];
-    for (var i = 1; i <= 65; i=i+2) {
+    for (var i = 1; i <= 65; i++) {
         if (i < 10) {
             manifest3.push({
-                src: "/assets/images/a2/a0" + i + ".png"
+                src: "/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png"
             });
         } else {
             manifest3.push({
-                src: "/assets/images/a2/a" + i + ".png"
+                src: "/campaign/augsoc1/public/assets/images/a2/a" + i + ".png"
             });
         }
     }
@@ -161,14 +159,14 @@ function setupManifest3() {
 
 function setupManifest4() {
     manifest4 = [];
-    for (var j = 88; j <= 167; j=j+2) {
+    for (var j = 88; j <= 167; j++) {
         if (j < 10) {
             manifest4.push({
-                src: "/assets/images/b1/b0" + j + ".png"
+                src: "/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest4.push({
-                src: "/assets/images/b1/b" + j + ".png"
+                src: "/campaign/augsoc1/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -313,21 +311,18 @@ function page1Act() {
 var act2Arr = [];
 var act2Numb = 65;
 var act2roolNumb = 30;
-for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
+for (var i = 1; i <= act2Numb + act2roolNumb; i++) {
     if (i < 10) {
-        act2Arr.push("/assets/images/a2/a0" + i + ".png");
+        act2Arr.push("/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png");
     } else if (i <= act2Numb) {
-        act2Arr.push("/assets/images/a2/a" + i + ".png");
+        act2Arr.push("/campaign/augsoc1/public/assets/images/a2/a" + i + ".png");
     } else {
-        act2Arr.push("/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
+        act2Arr.push("/campaign/augsoc1/public/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
     }
 }
 
 function page1Act2() {
     // Define a spritesheet. Note that this data was exported by Zoë.
-	//alert(act2Arr.toString());
-	$('body').css('background','#000');
-	
     var spriteSheet2 = new createjs.SpriteSheet({
         framerate: 8,
         "images": act2Arr,
@@ -340,17 +335,17 @@ function page1Act2() {
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act2": [0, (act2Numb-1)/2-1, 'act22'],
-            "act22": [(act2Numb-1)/2-1 + 1, (act2Numb-1)/2-1 + act2roolNumb/2, 'act23'],
-            "act23": [act2roolNumb/2+1, (act2Numb-1)/2-1, 'act22'],
+            "act2": [0, act2Numb, 'act22'],
+            "act22": [act2Numb + 1, act2Numb + act2roolNumb - 1, 'act23'],
+            "act23": [act2roolNumb, act2Numb, 'act22'],
         }
     });
-	
+
 	bgm2=createjs.Sound.play("bgm2");
     setTimeout(function() {
 		bgm2.stop();
         bgm3=createjs.Sound.play("bgm3");
-    }, 1000);
+    }, 2000);
 
     setTimeout(function() {
         canClickStep = 1;
@@ -360,11 +355,11 @@ function page1Act2() {
             })
             .to({
                 y: 900,
-            }, 800, createjs.Ease.get(1))
+            }, 500, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 800, createjs.Ease.get(1))
-    }, 1300);
+            }, 500, createjs.Ease.get(1))
+    }, 2500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet2.on("complete", function(event) {
@@ -381,24 +376,19 @@ function page1Act2() {
     // Add Grant to the stage, and add it as a listener to Ticker to get updates each frame.
     stage.removeChild(grant);
     stage.addChild(grant2);
-	
-	$("#canvas").touchwipe({
-		min_move_x: 40, //横向灵敏度
-		min_move_y: 40, //纵向灵敏度
-		wipeUp: function() {conctolStageClick();}, //向上滑动事件
- 		wipe:function(){conctolStageClick();}, //触摸事件
-		preventDefaultEvents: true //阻止默认事件
-		});
+    stage.addEventListener("stagemousedown", function() {
+        conctolStageClick();
+    });
 }
 
 var act3Arr = [];
 var act3Numb = 61;
 var act3roolNumb = 53;
-for (var j = 1; j <= act3Numb; j=j+2) {
+for (var j = 1; j <= act3Numb; j++) {
     if (j < 10) {
-        act3Arr.push("/assets/images/b1/b0" + j + ".png");
+        act3Arr.push("/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png");
     } else {
-        act3Arr.push("/assets/images/b1/b" + j + ".png");
+        act3Arr.push("/campaign/augsoc1/public/assets/images/b1/b" + j + ".png");
     }
 }
 
@@ -410,23 +400,23 @@ function page1Act3() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": (act3Numb-1)/2,
+            "count": act3Numb,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act3": [0, (act3Numb-1)/2 - 1, 'act31'],
-            "act31": [(act3roolNumb-1)/2, (act3Numb-1)/2 - 1, 'act31']
+            "act3": [0, act3Numb - 1, 'act31'],
+            "act31": [act3roolNumb, act3Numb - 1, 'act31']
         }
     });
-	
+
 	bgm5=createjs.Sound.play("bgm5",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-	
+
 	setTimeout(function(){
 		bgm5.stop();
 		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-		},1000);
+		},2000);
 
     setTimeout(function() {
         canClickStep = 3;
@@ -436,11 +426,11 @@ function page1Act3() {
             })
             .to({
                 y: 900,
-            }, 800, createjs.Ease.get(1))
+            }, 500, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 800, createjs.Ease.get(1))
-    }, 2500);
+            }, 500, createjs.Ease.get(1))
+    }, 5500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -463,11 +453,11 @@ var act4Arr = [];
 var act4Numb = 62;
 var act4Numb2 = 167;
 var act4roolNumb = 157;
-for (var l = act4Numb; l <= act4Numb2; l=l+2) {
+for (var l = act4Numb; l <= act4Numb2; l++) {
     if (l < 10) {
-        act4Arr.push("/assets/images/b1/b0" + l + ".png");
+        act4Arr.push("/campaign/augsoc1/public/assets/images/b1/b0" + l + ".png");
     } else {
-        act4Arr.push("/assets/images/b1/b" + l + ".png");
+        act4Arr.push("/campaign/augsoc1/public/assets/images/b1/b" + l + ".png");
     }
 }
 
@@ -479,39 +469,34 @@ function page1Act4() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": (act4Numb2 - act4Numb-1)/2,
+            "count": act4Numb2 - act4Numb,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act4": [0, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41'],
-            "act41": [(act4roolNumb - act4Numb-1)/2, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41']
+            "act4": [0, (act4Numb2 - act4Numb - 1), 'act41'],
+            "act41": [(act4roolNumb - act4Numb), (act4Numb2 - act4Numb - 1), 'act41']
         }
     });
-	
+
 	bgm4.stop();
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 800);
+    }, 1500);
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 2000);
-	
-	setTimeout(function(){
-		stage.addChild(btn);
-        createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
-		},5500);
+    }, 4000);
 
     setTimeout(function() {
         createjs.Sound.play("bgm3");
-    }, 5500);
+    }, 11000);
 
     setTimeout(function() {
         canClickStep = 5;
-    }, 5500);
+    }, 11000);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -601,10 +586,9 @@ function goPage3() {
 						else{
 							rNumb=4;
 							}
-				
+
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-				$('.page8Img2').addClass('page8Img2'+rNumb);
+				$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -625,8 +609,7 @@ function goPage3() {
 			else{
 				prizeNumb=0;
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-				$('.page8Img2').addClass('page8Img2'+rNumb);
+				$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -649,8 +632,7 @@ function goPage3() {
 			closeLoading();
 			prizeNumb=0;
 		    $('.page4Img1').addClass('page4Img1' + rNumb);
-			$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-			$('.page8Img2').addClass('page8Img2'+rNumb);
+			$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
 			if (!isGo3) {
 				isGo3 = true;
 				bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -766,7 +748,7 @@ function closeShare() {
     $('.shareNote').hide();
 }
 
-var stage, grant, grant2, grant3, grant4, downArrow,btn, bgm0,bgm1,bgm2,bgm3,bgm4,bgm5,bgm6;
+var stage, grant, grant2, grant3, grant4, downArrow, bgm0,bgm1,bgm2,bgm3,bgm4,bgm5,bgm6;
 
 function act1() {
     // create a new stage and point it at our canvas:
@@ -775,7 +757,7 @@ function act1() {
     // Define a spritesheet. Note that this data was exported by Zoë.
     var spriteSheet = new createjs.SpriteSheet({
         framerate: 4,
-        "images": ["/assets/images/a1/act.png"],
+        "images": ["/campaign/augsoc1/public/assets/images/a1/act.png"],
         "frames": {
             "regX": 0,
             "height": 1109,
@@ -788,13 +770,9 @@ function act1() {
         }
     });
 
-    downArrow = new createjs.Bitmap("/assets/images/topArrow.png");
+    downArrow = new createjs.Bitmap("/campaign/augsoc1/public/assets/images/topArrow.png");
     downArrow.x = 275;
-    downArrow.y = 950;
-	
-	btn = new createjs.Bitmap("/assets/images/btn.png");
-    btn.x = 450;
-    btn.y = 750;
+    downArrow.y = 990;
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet.on("complete", function(event) {
@@ -803,7 +781,7 @@ function act1() {
     spriteSheet.on("error", function(event) {
     	console.log("Error", event);
     });*/
-	
+
 	bgm0.stop();
     bgm1 = createjs.Sound.play("bgm1");
 
