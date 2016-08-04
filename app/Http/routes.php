@@ -6,8 +6,14 @@ Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));
     $request_url = 'http://dev.maestro.com.cn/campaign/api/wechat/share.php?url='.$url;
     //var_dump($request_url);
-    $result = file_get_contents($request_url);
-    return $result;
+    $result = json_decode(file_get_contents($request_url),true);
+    $share = [
+      'title' => env('WECHAT_SHARE_TITLE'),
+      'desc' => env('WECHAT_SHARE_DESC'),
+      'link' => env('APP_URL'),
+      'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
+    ];
+    return array_merge($share, $result);
     /*
     $url = urldecode(Request::get('url'));
     $options = [
