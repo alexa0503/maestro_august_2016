@@ -91,8 +91,8 @@ body.noImg img{ display:none;}
 
 .page9Img1{ background:url(../images/page9Img1.png) 0 0 no-repeat;}
 .code{ width:428px; height:80px; padding:0; text-align:center; left:116px; top:184px; line-height:80px; font-size:40px; color:#092091;}
-.page9Btn1{ left:116px; top:915px;}
-.page9Btn2{ left:363px; top:915px;}
+.page9Btn1{ left:113px; top:911px;}
+.page9Btn2{ left:342px; top:911px;}
 .qcImg2{ left:54px; top:448px; padding:200px;}
 
 #canvas{ position:absolute; width:640px; height:1109px; left:50%; top:50%; margin:-554.5px 0 0 -320px;}
