@@ -78,7 +78,7 @@
                 <div class="innerDiv">
                     <div class="page7Img1 bgImg"></div>
                     <img src="{{asset('assets/images/qc1.png')}}" class="abs qcImg1">
-                    <a href="javascript:void(0);" class="abs page9Btn1"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
+                    <a href="javascript:void(0);" class="abs page9Btn1" onClick="backLottery();"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
                     <a href="javascript:void(0);" class="abs page9Btn2" onClick="showShare();"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     <img src="{{asset('assets/images/qc2.png')}}" class="abs qcImg2">
 
                     <p class="abs code">CODE12345678</p>
-                    <a href="javascript:void(0);" class="abs page9Btn1"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
+                    <a href="javascript:void(0);" class="abs page9Btn1" onClick="backLottery();"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
                     <a href="javascript:void(0);" class="abs page9Btn2" onClick="showShare();"><img src="{{asset('assets/images/space.gif')}}" width="198" height="92"></a>
                 </div>
             </div>

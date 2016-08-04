@@ -794,3 +794,11 @@ function act1() {
     createjs.Ticker.timingMode = createjs.Ticker.RAF;
     createjs.Ticker.addEventListener("tick", stage);
 }
+
+function backLottery(){
+	$('#canvas').show();
+	$('.page9').hide();
+	$('.page7').hide();
+	$('.page3Img1').css('background-position','0 0');
+	canClickStep=5;
+	}
