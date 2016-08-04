@@ -18,8 +18,8 @@ body.noImg img{ display:none;}
 .abs{ position:absolute;}
 
 .pageOuter{ width:640px; margin:0; overflow:hidden; position:fixed; left:50%; top:0; margin-left:-320px; z-index:99;}
-.page{ width:640px; overflow:hidden; position:absolute; left:0; top:0;}
-.h1008{ width:640px; height:1008px;}
+.page{ width:640px; position:absolute; left:0; top:0;}
+.h1008{ width:640px; height:1008px; position:absolute; left:50%; top:50%; margin:-504px 0 0 -320px;}
 
 .bgImg{ width:640px; height:1109px; display:block; overflow:hidden; position:absolute; left:0; top:-50.5px;}
 

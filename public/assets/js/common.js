@@ -20,24 +20,21 @@ $(document).ready(function() {
     wHeight = $(window).height();
 	orgnilWHeight = $(window).height();
 	
-    if (wHeight <= 1008) {
-		var bli=wHeight/1008;
-        wHeight = 1008;
+		var bli=wHeight/1109;
 		$('.page').css('-webkit-transform','scale('+bli+')');
-		$('.page').css('-webkit-transform-origin','50% 0');
+		$('#canvas').css('-webkit-transform','scale('+bli+')');
+		
+		if(wHeight<1008){
+			$('.page').css('-webkit-transform-origin',"50% 50%");
+			$('#canvas').css('-webkit-transform-origin',"50% 50%");
+			}
         $('body').on('touchmove', function(e) {
             e.preventDefault();
         });
-    } else {
-		$('.page').css('-webkit-transform','scale('+wHeight/1060+')');
-        $('body').on('touchmove', function(e) {
-            e.preventDefault();
-        });
-    }
-
+		
     $('.pageOuter').height(wHeight);
     $('.page').height(wHeight);
-    $('.h1008').css('padding-top', (wHeight - 1008) / 2 + 'px');
+    //$('.h1008').css('padding-top', (wHeight - 1008) / 2 + 'px');
 
     loadImg();
 });
