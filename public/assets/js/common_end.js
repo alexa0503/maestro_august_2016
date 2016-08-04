@@ -15,21 +15,11 @@ function randomNumb(minNumb, maxNumb) {
 }
 
 var wHeight;
-var orgnilWHeight;
 $(document).ready(function() {
     wHeight = $(window).height();
-	orgnilWHeight = $(window).height();
-	
-    if (wHeight <= 1008) {
-		var bli=wHeight/1008;
+    if (wHeight < 1008) {
         wHeight = 1008;
-		$('.page').css('-webkit-transform','scale('+bli+')');
-		$('.page').css('-webkit-transform-origin','50% 0');
-        $('body').on('touchmove', function(e) {
-            e.preventDefault();
-        });
     } else {
-		$('.page').css('-webkit-transform','scale('+wHeight/1060+')');
         $('body').on('touchmove', function(e) {
             e.preventDefault();
         });
@@ -77,7 +67,7 @@ function setupManifest() {
     manifest.push({
         src: "/assets/images/a1/act.png"
     });
-
+	
     manifest.push({
         src: "/assets/images/page3Img1.png"
     });
@@ -128,7 +118,7 @@ function setupManifest() {
 
 function setupManifest2() {
     manifest2 = [];
-    for (var j = 1; j <= 87; j=j+2) {
+    for (var j = 1; j <= 87; j++) {
         if (j < 10) {
             manifest2.push({
                 src: "/assets/images/b1/b0" + j + ".png"
@@ -144,7 +134,7 @@ function setupManifest2() {
 
 function setupManifest3() {
     manifest3 = [];
-    for (var i = 1; i <= 65; i=i+2) {
+    for (var i = 1; i <= 65; i++) {
         if (i < 10) {
             manifest3.push({
                 src: "/assets/images/a2/a0" + i + ".png"
@@ -161,7 +151,7 @@ function setupManifest3() {
 
 function setupManifest4() {
     manifest4 = [];
-    for (var j = 88; j <= 167; j=j+2) {
+    for (var j = 88; j <= 167; j++) {
         if (j < 10) {
             manifest4.push({
                 src: "/assets/images/b1/b0" + j + ".png"
@@ -313,7 +303,7 @@ function page1Act() {
 var act2Arr = [];
 var act2Numb = 65;
 var act2roolNumb = 30;
-for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
+for (var i = 1; i <= act2Numb + act2roolNumb; i++) {
     if (i < 10) {
         act2Arr.push("/assets/images/a2/a0" + i + ".png");
     } else if (i <= act2Numb) {
@@ -325,9 +315,6 @@ for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
 
 function page1Act2() {
     // Define a spritesheet. Note that this data was exported by Zoë.
-	//alert(act2Arr.toString());
-	$('body').css('background','#000');
-	
     var spriteSheet2 = new createjs.SpriteSheet({
         framerate: 8,
         "images": act2Arr,
@@ -340,9 +327,9 @@ function page1Act2() {
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act2": [0, (act2Numb-1)/2-1, 'act22'],
-            "act22": [(act2Numb-1)/2-1 + 1, (act2Numb-1)/2-1 + act2roolNumb/2, 'act23'],
-            "act23": [act2roolNumb/2+1, (act2Numb-1)/2-1, 'act22'],
+            "act2": [0, act2Numb, 'act22'],
+            "act22": [act2Numb + 1, act2Numb + act2roolNumb - 1, 'act23'],
+            "act23": [act2roolNumb, act2Numb, 'act22'],
         }
     });
 	
@@ -350,7 +337,7 @@ function page1Act2() {
     setTimeout(function() {
 		bgm2.stop();
         bgm3=createjs.Sound.play("bgm3");
-    }, 1000);
+    }, 2000);
 
     setTimeout(function() {
         canClickStep = 1;
@@ -360,11 +347,11 @@ function page1Act2() {
             })
             .to({
                 y: 900,
-            }, 800, createjs.Ease.get(1))
+            }, 500, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 800, createjs.Ease.get(1))
-    }, 1300);
+            }, 500, createjs.Ease.get(1))
+    }, 2500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet2.on("complete", function(event) {
@@ -381,20 +368,15 @@ function page1Act2() {
     // Add Grant to the stage, and add it as a listener to Ticker to get updates each frame.
     stage.removeChild(grant);
     stage.addChild(grant2);
-	
-	$("#canvas").touchwipe({
-		min_move_x: 40, //横向灵敏度
-		min_move_y: 40, //纵向灵敏度
-		wipeUp: function() {conctolStageClick();}, //向上滑动事件
- 		wipe:function(){conctolStageClick();}, //触摸事件
-		preventDefaultEvents: true //阻止默认事件
-		});
+    stage.addEventListener("stagemousedown", function() {
+        conctolStageClick();
+    });
 }
 
 var act3Arr = [];
 var act3Numb = 61;
 var act3roolNumb = 53;
-for (var j = 1; j <= act3Numb; j=j+2) {
+for (var j = 1; j <= act3Numb; j++) {
     if (j < 10) {
         act3Arr.push("/assets/images/b1/b0" + j + ".png");
     } else {
@@ -410,14 +392,14 @@ function page1Act3() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": (act3Numb-1)/2,
+            "count": act3Numb,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act3": [0, (act3Numb-1)/2 - 1, 'act31'],
-            "act31": [(act3roolNumb-1)/2, (act3Numb-1)/2 - 1, 'act31']
+            "act3": [0, act3Numb - 1, 'act31'],
+            "act31": [act3roolNumb, act3Numb - 1, 'act31']
         }
     });
 	
@@ -426,7 +408,7 @@ function page1Act3() {
 	setTimeout(function(){
 		bgm5.stop();
 		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-		},1000);
+		},2000);
 
     setTimeout(function() {
         canClickStep = 3;
@@ -436,11 +418,11 @@ function page1Act3() {
             })
             .to({
                 y: 900,
-            }, 800, createjs.Ease.get(1))
+            }, 500, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 800, createjs.Ease.get(1))
-    }, 2500);
+            }, 500, createjs.Ease.get(1))
+    }, 5500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -463,7 +445,7 @@ var act4Arr = [];
 var act4Numb = 62;
 var act4Numb2 = 167;
 var act4roolNumb = 157;
-for (var l = act4Numb; l <= act4Numb2; l=l+2) {
+for (var l = act4Numb; l <= act4Numb2; l++) {
     if (l < 10) {
         act4Arr.push("/assets/images/b1/b0" + l + ".png");
     } else {
@@ -479,14 +461,14 @@ function page1Act4() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": (act4Numb2 - act4Numb-1)/2,
+            "count": act4Numb2 - act4Numb,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act4": [0, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41'],
-            "act41": [(act4roolNumb - act4Numb-1)/2, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41']
+            "act4": [0, (act4Numb2 - act4Numb - 1), 'act41'],
+            "act41": [(act4roolNumb - act4Numb), (act4Numb2 - act4Numb - 1), 'act41']
         }
     });
 	
@@ -494,24 +476,24 @@ function page1Act4() {
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 800);
+    }, 1500);
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 2000);
+    }, 4000);
 	
 	setTimeout(function(){
 		stage.addChild(btn);
         createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
-		},5500);
+		},11000);
 
     setTimeout(function() {
         createjs.Sound.play("bgm3");
-    }, 5500);
+    }, 11000);
 
     setTimeout(function() {
         canClickStep = 5;
-    }, 5500);
+    }, 11000);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -604,7 +586,6 @@ function goPage3() {
 				
 				$('.page4Img1').addClass('page4Img1' + rNumb);
 				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -626,7 +607,6 @@ function goPage3() {
 				prizeNumb=0;
 				$('.page4Img1').addClass('page4Img1' + rNumb);
 				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -650,7 +630,6 @@ function goPage3() {
 			prizeNumb=0;
 		    $('.page4Img1').addClass('page4Img1' + rNumb);
 			$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-			$('.page8Img2').addClass('page8Img2'+rNumb);
 			if (!isGo3) {
 				isGo3 = true;
 				bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -790,7 +769,7 @@ function act1() {
 
     downArrow = new createjs.Bitmap("/assets/images/topArrow.png");
     downArrow.x = 275;
-    downArrow.y = 950;
+    downArrow.y = 990;
 	
 	btn = new createjs.Bitmap("/assets/images/btn.png");
     btn.x = 450;

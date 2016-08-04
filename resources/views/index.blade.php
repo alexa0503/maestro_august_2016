@@ -88,6 +88,7 @@
             <div class="h1008">
                 <div class="innerDiv">
                     <div class="page8Img1 bgImg"></div>
+                    <div class="page8Img2 bgImg"></div>
                     <img src="" class="endImg abs">
                     <a href="javascript:void(0);" class="abs page5Btn1" onClick="goPage9();"><img src="{{asset('assets/images/space.gif')}}" width="260" height="118"></a>
                 </div>

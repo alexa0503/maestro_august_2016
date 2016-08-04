@@ -22,6 +22,7 @@
     <script src="{{asset('assets/js/easeljs-0.8.2.min.js')}}"></script>
     <script src="{{asset('assets/js/tweenjs-0.6.2.min.js')}}"></script>
     <script src="{{asset('assets/js/soundjs-0.6.2.min.js')}}"></script>
+    <script src="{{asset('assets/js/touch.js')}}"></script>
     <script src="{{asset('assets/js/common.js')}}"></script>
 
     <!--移动端版本兼容 -->
