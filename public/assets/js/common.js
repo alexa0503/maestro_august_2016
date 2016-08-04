@@ -17,25 +17,19 @@ function randomNumb(minNumb, maxNumb) {
 var wHeight;
 $(document).ready(function() {
     wHeight = $(window).height();
-<<<<<<< HEAD
 	orgnilWHeight = $(window).height();
 	
-		var bli=wHeight/1109;
-		$('.page').css('-webkit-transform','scale('+bli+')');
-		$('#canvas').css('-webkit-transform','scale('+bli+')');
-		
-		if(wHeight<1008){
-			$('.page').css('-webkit-transform-origin',"50% 50%");
-			$('#canvas').css('-webkit-transform-origin',"50% 50%");
-			}
-=======
-    if (wHeight < 1008) {
-        wHeight = 1008;
-    } else {
->>>>>>> origin/master
-        $('body').on('touchmove', function(e) {
-            e.preventDefault();
-        });
+	var bli=wHeight/1109;
+	$('.page').css('-webkit-transform','scale('+bli+')');
+	$('#canvas').css('-webkit-transform','scale('+bli+')');
+	
+	if(wHeight<1008){
+		$('.page').css('-webkit-transform-origin',"50% 50%");
+		$('#canvas').css('-webkit-transform-origin',"50% 50%");
+		}
+	$('body').on('touchmove', function(e) {
+		e.preventDefault();
+	});
 		
     $('.pageOuter').height(wHeight);
     $('.page').height(wHeight);
