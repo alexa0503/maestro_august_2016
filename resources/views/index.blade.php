@@ -121,7 +121,7 @@
 @section('scripts')
 <script>
 $(document).ready(function() {
-	//wxShare();
+	wxShare();
 });
 </script>
 @endsection
