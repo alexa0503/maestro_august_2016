@@ -39,10 +39,13 @@ var preload, preload2, preload3, preload4;
 //定义相关JSON格式文件列表
 function setupManifest() {
     createjs.Sound.alternateExtensions = ["mp3"];
-    createjs.Sound.registerSound({
-        src: "/assets/images/bgm1.mp3",
-        id: "bgm1"
-    });
+    createjs.Sound.registerSound({src: "/assets/images/bgm0.mp3",id: "bgm0"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm1.mp3",id: "bgm1"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm2.mp3",id: "bgm2"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm3.mp3",id: "bgm3"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm4.mp3",id: "bgm4"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm5.mp3",id: "bgm5"});
+	createjs.Sound.registerSound({src: "/assets/images/bgm6.mp3",id: "bgm6"});
 
     manifest = [];
     manifest.push({
@@ -271,6 +274,7 @@ var isGo1 = false;
 function goPage1() {
     if (!isGo1) {
         isGo1 = true;
+		bgm0=createjs.Sound.play("bgm0",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
         $('body').removeClass('noImg');
         $('.page0').fadeOut(500);
         $('.page1').fadeIn(500);
@@ -324,9 +328,11 @@ function page1Act2() {
             "act23": [act2roolNumb, act2Numb, 'act22'],
         }
     });
-
+	
+	bgm2=createjs.Sound.play("bgm2");
     setTimeout(function() {
-        createjs.Sound.play("bgm1");
+		bgm2.stop();
+        bgm3=createjs.Sound.play("bgm3");
     }, 2000);
 
     setTimeout(function() {
@@ -392,10 +398,13 @@ function page1Act3() {
             "act31": [act3roolNumb, act3Numb - 1, 'act31']
         }
     });
-
-    setTimeout(function() {
-        createjs.Sound.play("bgm1");
-    }, 2000);
+	
+	bgm5=createjs.Sound.play("bgm5",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+	
+	setTimeout(function(){
+		bgm5.stop();
+		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+		},2000);
 
     setTimeout(function() {
         canClickStep = 3;
@@ -458,18 +467,20 @@ function page1Act4() {
             "act41": [(act4roolNumb - act4Numb), (act4Numb2 - act4Numb - 1), 'act41']
         }
     });
+	
+	bgm4.stop();
 
     setTimeout(function() {
-        createjs.Sound.play("bgm1");
-    }, 1000);
+        createjs.Sound.play("bgm6");
+    }, 1500);
 
     setTimeout(function() {
-        createjs.Sound.play("bgm1");
-    }, 3500);
+        createjs.Sound.play("bgm6");
+    }, 4000);
 
     setTimeout(function() {
-        createjs.Sound.play("bgm1");
-    }, 10500);
+        createjs.Sound.play("bgm3");
+    }, 11000);
 
     setTimeout(function() {
         canClickStep = 5;
@@ -540,24 +551,94 @@ function page2Act() {
 }
 
 var isGo3 = false;
+var prizeNumb;
 
 function goPage3() {
-    $('.page4Img1').addClass('page4Img1' + rNumb);
-    $('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
-    if (!isGo3) {
-        isGo3 = true;
-        $('#canvas').fadeOut(500);
-        $('.page1').hide();
-        $('.page2').hide();
-        $('.page3').fadeIn(500);
-        $('.page3Img1').delay(500).animate({
-            backgroundPosition: -(rNumb + 5) * 640
-        }, 1800 + (rNumb - 1) * 300, 'linear', function() {
-            setTimeout(function() {
-                goPage4();
-            }, 1000);
-        });
-    }
+	showLoading();
+	var token = $('input[name="_token"]').val();
+	//ajax抽奖
+    $.ajax(actUrl, {
+		data: {_token: token},
+        type: 'post',
+        dataType: 'json',
+        success: function(json) {
+			closeLoading();
+            if(json && json.prize && json.prize > 0){
+				prizeNumb=json.prize;
+				if(prizeNumb==1){
+					rNumb=5;
+					}
+					else if(prizeNumb==2){
+						rNumb=3;
+						}
+						else{
+							rNumb=4;
+							}
+				
+				$('.page4Img1').addClass('page4Img1' + rNumb);
+				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+				if (!isGo3) {
+					isGo3 = true;
+					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+					$('#canvas').fadeOut(500);
+					$('.page1').hide();
+					$('.page2').hide();
+					$('.page3').fadeIn(500);
+					$('.page3Img1').delay(500).animate({
+						backgroundPosition: -(rNumb + 5) * 640
+					}, 1800 + (rNumb - 1) * 300, 'linear', function() {
+						setTimeout(function() {
+							bgm6.stop();
+							goPage4();
+						}, 1000);
+					});
+				}
+			}
+			else{
+				prizeNumb=0;
+				$('.page4Img1').addClass('page4Img1' + rNumb);
+				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+				if (!isGo3) {
+					isGo3 = true;
+					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+					$('#canvas').fadeOut(500);
+					$('.page1').hide();
+					$('.page2').hide();
+					$('.page3').fadeIn(500);
+					$('.page3Img1').delay(500).animate({
+						backgroundPosition: -(rNumb + 5) * 640
+					}, 1800 + (rNumb - 1) * 300, 'linear', function() {
+						setTimeout(function() {
+							bgm6.stop();
+							goPage4();
+						}, 1000);
+					});
+				}
+			}
+        },
+        error: function() {
+			closeLoading();
+			prizeNumb=0;
+		    $('.page4Img1').addClass('page4Img1' + rNumb);
+			$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+			if (!isGo3) {
+				isGo3 = true;
+				bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+				$('#canvas').fadeOut(500);
+				$('.page1').hide();
+				$('.page2').hide();
+				$('.page3').fadeIn(500);
+				$('.page3Img1').delay(500).animate({
+					backgroundPosition: -(rNumb + 5) * 640
+				}, 1800 + (rNumb - 1) * 300, 'linear', function() {
+					setTimeout(function() {
+						goPage4();
+						bgm6.stop();
+					}, 1000);
+				});
+			}
+        }
+    })
 }
 
 function goPage4() {
@@ -565,32 +646,20 @@ function goPage4() {
     $('.page4').show();
 }
 
-function pageLottery(url) {
-    showLoading();
-	var token = $('input[name="_token"]').val();
-	//ajax抽奖
-    $.ajax(url, {
-		data: {_token: token},
-        type: 'post',
-        dataType: 'json',
-        success: function(json) {
-			closeLoading();
-            if(json && json.prize && json.prize > 0){
-				$('.page5Img1').addClass('page5Img1' + json.prize);
-		        $('.page4').fadeOut(500);
-		        $('.page5').fadeIn(500);
+function pageLottery() {
+    if(prizeNumb==1||prizeNumb==2||prizeNumb==3){
+		$('.page5Img1').addClass('page5Img1' + prizeNumb);
+		$('.page4').fadeOut(500);
+		$('.page5').fadeIn(500);
+		}
+		else if(prizeNumb==0){
+			$('.page4').fadeOut(500);
+		    $('.page6').fadeIn(500);
 			}
 			else{
 				$('.page4').fadeOut(500);
 		        $('.page8').fadeIn(500);
-			}
-        },
-        error: function() {
-			closeLoading();
-		    $('.page4').fadeOut(500);
-		    $('.page6').fadeIn(500);
-        }
-    })
+				}
 }
 
 function goPage9() {
@@ -667,7 +736,7 @@ function closeShare() {
     $('.shareNote').hide();
 }
 
-var stage, grant, grant2, grant3, grant4, downArrow, bgm1;
+var stage, grant, grant2, grant3, grant4, downArrow, bgm0,bgm1,bgm2,bgm3,bgm4,bgm5,bgm6;
 
 function act1() {
     // create a new stage and point it at our canvas:
@@ -700,7 +769,8 @@ function act1() {
     spriteSheet.on("error", function(event) {
     	console.log("Error", event);
     });*/
-
+	
+	bgm0.stop();
     bgm1 = createjs.Sound.play("bgm1");
 
     grant = new createjs.Sprite(spriteSheet, "act1");

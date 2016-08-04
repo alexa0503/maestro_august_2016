@@ -36,6 +36,7 @@
             <div class="h1008">
                 <div class="innerDiv">
                     <div class="page3Img1 bgImg"></div>
+                    <script>var actUrl='{{url("lottery")}}';</script>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
             <div class="h1008">
                 <div class="innerDiv">
                     <div class="page4Img1 bgImg"></div>
-                    <a href="javascript:void(0);" class="abs page4Btn1" onClick="pageLottery('{{url("lottery")}}');"><img src="{{asset('assets/images/space.gif')}}" width="462" height="119"></a>
+                    <a href="javascript:void(0);" class="abs page4Btn1" onClick="pageLottery();"><img src="{{asset('assets/images/space.gif')}}" width="462" height="119"></a>
                 </div>
             </div>
         </div>
