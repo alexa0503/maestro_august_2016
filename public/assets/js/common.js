@@ -801,4 +801,5 @@ function backLottery(){
 	$('.page7').hide();
 	$('.page3Img1').css('background-position','0 0');
 	canClickStep=5;
+	isGo3=false;
 	}
