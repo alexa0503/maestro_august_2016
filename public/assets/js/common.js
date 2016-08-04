@@ -357,7 +357,7 @@ function page1Act2() {
                 y: 900,
             }, 500, createjs.Ease.get(1))
             .to({
-                y: 990
+                y: 950
             }, 500, createjs.Ease.get(1))
     }, 2500);
 
@@ -428,7 +428,7 @@ function page1Act3() {
                 y: 900,
             }, 500, createjs.Ease.get(1))
             .to({
-                y: 990
+                y: 950
             }, 500, createjs.Ease.get(1))
     }, 5500);
 
