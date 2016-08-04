@@ -15,21 +15,22 @@ function randomNumb(minNumb, maxNumb) {
 }
 
 var wHeight;
+var orgnilWHeight;
 $(document).ready(function() {
     wHeight = $(window).height();
 	orgnilWHeight = $(window).height();
 	
-	var bli=wHeight/1109;
-	$('.page').css('-webkit-transform','scale('+bli+')');
-	$('#canvas').css('-webkit-transform','scale('+bli+')');
-	
-	if(wHeight<1008){
-		$('.page').css('-webkit-transform-origin',"50% 50%");
-		$('#canvas').css('-webkit-transform-origin',"50% 50%");
-		}
-	$('body').on('touchmove', function(e) {
-		e.preventDefault();
-	});
+		var bli=wHeight/1109;
+		$('.page').css('-webkit-transform','scale('+bli+')');
+		$('#canvas').css('-webkit-transform','scale('+bli+')');
+		
+		if(wHeight<1008){
+			$('.page').css('-webkit-transform-origin',"50% 50%");
+			$('#canvas').css('-webkit-transform-origin',"50% 50%");
+			}
+        $('body').on('touchmove', function(e) {
+            e.preventDefault();
+        });
 		
     $('.pageOuter').height(wHeight);
     $('.page').height(wHeight);
@@ -54,6 +55,9 @@ function setupManifest() {
 	createjs.Sound.registerSound({src: "/campaign/augsoc1/public/assets/images/bgm6.mp3",id: "bgm6"});
 
     manifest = [];
+	manifest.push({
+        src: "/campaign/augsoc1/public/assets/images/btn.png"
+    });
     manifest.push({
         src: "/campaign/augsoc1/public/assets/images/page1Img1.png"
     });
@@ -70,17 +74,6 @@ function setupManifest() {
     manifest.push({
         src: "/campaign/augsoc1/public/assets/images/a1/act.png"
     });
-    for (var i = 1; i <= 65; i++) {
-        if (i < 10) {
-            manifest.push({
-                src: "/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png"
-            });
-        } else {
-            manifest.push({
-                src: "/campaign/augsoc1/public/assets/images/a2/a" + i + ".png"
-            });
-        }
-    }
 
     manifest.push({
         src: "/campaign/augsoc1/public/assets/images/page3Img1.png"
@@ -132,7 +125,7 @@ function setupManifest() {
 
 function setupManifest2() {
     manifest2 = [];
-    for (var j = 1; j <= 87; j++) {
+    for (var j = 1; j <= 87; j=j+2) {
         if (j < 10) {
             manifest2.push({
                 src: "/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png"
@@ -148,7 +141,7 @@ function setupManifest2() {
 
 function setupManifest3() {
     manifest3 = [];
-    for (var i = 1; i <= 65; i++) {
+    for (var i = 1; i <= 65; i=i+2) {
         if (i < 10) {
             manifest3.push({
                 src: "/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png"
@@ -165,7 +158,7 @@ function setupManifest3() {
 
 function setupManifest4() {
     manifest4 = [];
-    for (var j = 88; j <= 167; j++) {
+    for (var j = 88; j <= 167; j=j+2) {
         if (j < 10) {
             manifest4.push({
                 src: "/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png"
@@ -317,7 +310,7 @@ function page1Act() {
 var act2Arr = [];
 var act2Numb = 65;
 var act2roolNumb = 30;
-for (var i = 1; i <= act2Numb + act2roolNumb; i++) {
+for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
     if (i < 10) {
         act2Arr.push("/campaign/augsoc1/public/assets/images/a2/a0" + i + ".png");
     } else if (i <= act2Numb) {
@@ -329,6 +322,9 @@ for (var i = 1; i <= act2Numb + act2roolNumb; i++) {
 
 function page1Act2() {
     // Define a spritesheet. Note that this data was exported by Zoë.
+	//alert(act2Arr.toString());
+	$('body').css('background','#000');
+	
     var spriteSheet2 = new createjs.SpriteSheet({
         framerate: 8,
         "images": act2Arr,
@@ -341,17 +337,17 @@ function page1Act2() {
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act2": [0, act2Numb, 'act22'],
-            "act22": [act2Numb + 1, act2Numb + act2roolNumb - 1, 'act23'],
-            "act23": [act2roolNumb, act2Numb, 'act22'],
+            "act2": [0, (act2Numb-1)/2-1, 'act22'],
+            "act22": [(act2Numb-1)/2-1 + 1, (act2Numb-1)/2-1 + act2roolNumb/2, 'act23'],
+            "act23": [act2roolNumb/2+1, (act2Numb-1)/2-1, 'act22'],
         }
     });
-
+	
 	bgm2=createjs.Sound.play("bgm2");
     setTimeout(function() {
 		bgm2.stop();
         bgm3=createjs.Sound.play("bgm3");
-    }, 2000);
+    }, 1000);
 
     setTimeout(function() {
         canClickStep = 1;
@@ -361,11 +357,11 @@ function page1Act2() {
             })
             .to({
                 y: 900,
-            }, 500, createjs.Ease.get(1))
+            }, 800, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 500, createjs.Ease.get(1))
-    }, 2500);
+            }, 800, createjs.Ease.get(1))
+    }, 1300);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet2.on("complete", function(event) {
@@ -382,15 +378,20 @@ function page1Act2() {
     // Add Grant to the stage, and add it as a listener to Ticker to get updates each frame.
     stage.removeChild(grant);
     stage.addChild(grant2);
-    stage.addEventListener("stagemousedown", function() {
-        conctolStageClick();
-    });
+	
+	$("#canvas").touchwipe({
+		min_move_x: 40, //横向灵敏度
+		min_move_y: 40, //纵向灵敏度
+		wipeUp: function() {conctolStageClick();}, //向上滑动事件
+ 		wipe:function(){conctolStageClick();}, //触摸事件
+		preventDefaultEvents: true //阻止默认事件
+		});
 }
 
 var act3Arr = [];
 var act3Numb = 61;
 var act3roolNumb = 53;
-for (var j = 1; j <= act3Numb; j++) {
+for (var j = 1; j <= act3Numb; j=j+2) {
     if (j < 10) {
         act3Arr.push("/campaign/augsoc1/public/assets/images/b1/b0" + j + ".png");
     } else {
@@ -406,23 +407,23 @@ function page1Act3() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": act3Numb,
+            "count": (act3Numb-1)/2,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act3": [0, act3Numb - 1, 'act31'],
-            "act31": [act3roolNumb, act3Numb - 1, 'act31']
+            "act3": [0, (act3Numb-1)/2 - 1, 'act31'],
+            "act31": [(act3roolNumb-1)/2, (act3Numb-1)/2 - 1, 'act31']
         }
     });
-
+	
 	bgm5=createjs.Sound.play("bgm5",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-
+	
 	setTimeout(function(){
 		bgm5.stop();
 		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-		},2000);
+		},1000);
 
     setTimeout(function() {
         canClickStep = 3;
@@ -432,11 +433,11 @@ function page1Act3() {
             })
             .to({
                 y: 900,
-            }, 500, createjs.Ease.get(1))
+            }, 800, createjs.Ease.get(1))
             .to({
                 y: 950
-            }, 500, createjs.Ease.get(1))
-    }, 5500);
+            }, 800, createjs.Ease.get(1))
+    }, 2500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -459,7 +460,7 @@ var act4Arr = [];
 var act4Numb = 62;
 var act4Numb2 = 167;
 var act4roolNumb = 157;
-for (var l = act4Numb; l <= act4Numb2; l++) {
+for (var l = act4Numb; l <= act4Numb2; l=l+2) {
     if (l < 10) {
         act4Arr.push("/campaign/augsoc1/public/assets/images/b1/b0" + l + ".png");
     } else {
@@ -475,34 +476,39 @@ function page1Act4() {
         "frames": {
             "regX": 0,
             "height": 1109,
-            "count": act4Numb2 - act4Numb,
+            "count": (act4Numb2 - act4Numb-1)/2,
             "regY": 0,
             "width": 640
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act4": [0, (act4Numb2 - act4Numb - 1), 'act41'],
-            "act41": [(act4roolNumb - act4Numb), (act4Numb2 - act4Numb - 1), 'act41']
+            "act4": [0, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41'],
+            "act41": [(act4roolNumb - act4Numb-1)/2, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41']
         }
     });
-
+	
 	bgm4.stop();
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 1500);
+    }, 800);
 
     setTimeout(function() {
         createjs.Sound.play("bgm6");
-    }, 4000);
+    }, 2000);
+	
+	setTimeout(function(){
+		stage.addChild(btn);
+        createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
+		},5500);
 
     setTimeout(function() {
         createjs.Sound.play("bgm3");
-    }, 11000);
+    }, 5500);
 
     setTimeout(function() {
         canClickStep = 5;
-    }, 11000);
+    }, 5500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -592,9 +598,10 @@ function goPage3() {
 						else{
 							rNumb=4;
 							}
-
+				
 				$('.page4Img1').addClass('page4Img1' + rNumb);
 				$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
+				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -616,6 +623,7 @@ function goPage3() {
 				prizeNumb=0;
 				$('.page4Img1').addClass('page4Img1' + rNumb);
 				$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
+				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
 					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -639,6 +647,7 @@ function goPage3() {
 			prizeNumb=0;
 		    $('.page4Img1').addClass('page4Img1' + rNumb);
 			$('.endImg').attr('src', '/campaign/augsoc1/public/assets/images/' + rNumb + '.gif');
+			$('.page8Img2').addClass('page8Img2'+rNumb);
 			if (!isGo3) {
 				isGo3 = true;
 				bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -754,7 +763,7 @@ function closeShare() {
     $('.shareNote').hide();
 }
 
-var stage, grant, grant2, grant3, grant4, downArrow, bgm0,bgm1,bgm2,bgm3,bgm4,bgm5,bgm6;
+var stage, grant, grant2, grant3, grant4, downArrow,btn, bgm0,bgm1,bgm2,bgm3,bgm4,bgm5,bgm6;
 
 function act1() {
     // create a new stage and point it at our canvas:
@@ -778,7 +787,11 @@ function act1() {
 
     downArrow = new createjs.Bitmap("/campaign/augsoc1/public/assets/images/topArrow.png");
     downArrow.x = 275;
-    downArrow.y = 990;
+    downArrow.y = 950;
+	
+	btn = new createjs.Bitmap("/campaign/augsoc1/public/assets/images/btn.png");
+    btn.x = 450;
+    btn.y = 750;
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet.on("complete", function(event) {
@@ -787,7 +800,7 @@ function act1() {
     spriteSheet.on("error", function(event) {
     	console.log("Error", event);
     });*/
-
+	
 	bgm0.stop();
     bgm1 = createjs.Sound.play("bgm1");
 
