@@ -8,6 +8,7 @@
                 <div class="innerDiv">
                     <div class="abs loadingImg" style="height:0;"></div>
                     <div class="loading bgImg"></div>
+                    <p class="loadingTxt"><span>0</span>%</p>
                 </div>
             </div>
         </div>

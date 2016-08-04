@@ -211,21 +211,33 @@ var loadImgHeight4 = 0;
 function handleFileProgress(event) {
     loadImgHeight1 = preload.progress * 29;
     $(".loadingImg").height(loadImgHeight1 + loadImgHeight2 + loadImgHeight3 + loadImgHeight4);
+	setTimeout(function(){
+		$('.loadingTxt span').html(Math.round((preload.progress+preload2.progress+preload3.progress+preload4.progress)*25));
+		},100);
 }
 
 function handleFileProgress2(event) {
-    loadImgHeight2 = preload.progress * 29;
+    loadImgHeight2 = preload2.progress * 29;
     $(".loadingImg").height(loadImgHeight1 + loadImgHeight2 + loadImgHeight3 + loadImgHeight4);
+	setTimeout(function(){
+		$('.loadingTxt span').html(Math.round((preload.progress+preload2.progress+preload3.progress+preload4.progress)*25));
+		},100);
 }
 
 function handleFileProgress3(event) {
     loadImgHeight3 = preload3.progress * 29;
     $(".loadingImg").height(loadImgHeight1 + loadImgHeight2 + loadImgHeight3 + loadImgHeight4);
+	setTimeout(function(){
+		$('.loadingTxt span').html(Math.round((preload.progress+preload2.progress+preload3.progress+preload4.progress)*25));
+		},100);
 }
 
 function handleFileProgress4(event) {
     loadImgHeight4 = preload4.progress * 30;
     $(".loadingImg").height(loadImgHeight1 + loadImgHeight2 + loadImgHeight3 + loadImgHeight4);
+	setTimeout(function(){
+		$('.loadingTxt span').html(Math.round((preload.progress+preload2.progress+preload3.progress+preload4.progress)*25));
+		},100);
 }
 
 //全度资源加载完毕

@@ -25,6 +25,7 @@ body.noImg img{ display:none;}
 
 .loading{ background:url(../images/loading1.png) 0 0 no-repeat;}
 .loadingImg{ background:url(../images/loading2.png) left bottom no-repeat; width:67px; height:117px; left:280px; bottom:580px;}
+.loadingTxt{ position:absolute; left:426px; top:540px; font-size:38px; line-height:38px; padding:0; color:#001671;}
 
 .page1Img1{ background:url(../images/page1Img1.png) 0 0 no-repeat;}
 .page1Img1b{ background:url(../images/page1Img1b.png) 0 0 no-repeat; width:244px; height:230px; position:fixed; left:-60px; bottom:-5px; -webkit-animation:page1Img1b 2s 0s linear both infinite;}
