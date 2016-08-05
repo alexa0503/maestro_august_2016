@@ -3,7 +3,8 @@ Route::get('/', 'HomeController@index');
 Route::post('info', 'HomeController@info');
 Route::post('lottery', 'HomeController@lottery');
 Route::get('/wx/share', function(){
-    $url = urldecode(Request::get('url'));
+    //$url = urldecode(Request::get('url'));
+    $url = urlencode(Request::get('url'));
     $request_url = 'http://dev.maestro.com.cn/campaign/api/wechat/share.php?url='.$url;
     //var_dump($request_url);
     $result = json_decode(file_get_contents($request_url),true);
