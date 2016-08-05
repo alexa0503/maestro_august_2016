@@ -329,7 +329,7 @@ function page1Act2() {
 	$('body').css('background','#000');
 
     var spriteSheet2 = new createjs.SpriteSheet({
-        framerate: 8,
+        framerate: 4,
         "images": act2Arr,
         "frames": {
             "regX": 0,
@@ -350,7 +350,7 @@ function page1Act2() {
     setTimeout(function() {
 		bgm2.stop();
         bgm3=createjs.Sound.play("bgm3");
-    }, 1000);
+    }, 2000);
 
     setTimeout(function() {
         canClickStep = 1;
@@ -364,7 +364,7 @@ function page1Act2() {
             .to({
                 y: 950
             }, 1000, createjs.Ease.get(1))
-    }, 1300);
+    }, 2500);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet2.on("complete", function(event) {
@@ -405,7 +405,7 @@ for (var j = 1; j <= act3Numb; j=j+2) {
 function page1Act3() {
     // Define a spritesheet. Note that this data was exported by Zoë.
     var spriteSheet3 = new createjs.SpriteSheet({
-        framerate: 8,
+        framerate: 4,
         "images": act3Arr,
         "frames": {
             "regX": 0,
@@ -426,7 +426,7 @@ function page1Act3() {
 	setTimeout(function(){
 		bgm5.stop();
 		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-		},1000);
+		},2000);
 
     setTimeout(function() {
         canClickStep = 3;
@@ -440,7 +440,7 @@ function page1Act3() {
             .to({
                 y: 950
             }, 1000, createjs.Ease.get(1))
-    }, 2500);
+    }, 5000);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
@@ -474,7 +474,7 @@ for (var l = act4Numb; l <= act4Numb2; l=l+2) {
 function page1Act4() {
     // Define a spritesheet. Note that this data was exported by Zoë.
     var spriteSheet4 = new createjs.SpriteSheet({
-        framerate: 8,
+        framerate: 4,
         "images": act4Arr,
         "frames": {
             "regX": 0,
@@ -485,33 +485,26 @@ function page1Act4() {
         },
         // define two animations, run (loops, 1.5x speed) and jump (returns to run):
         "animations": {
-            "act4": [0, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41'],
+            "act4": [12, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41'],
             "act41": [(act4roolNumb - act4Numb-1)/2, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41']
         }
     });
 
 	bgm4.stop();
-
-    setTimeout(function() {
-        createjs.Sound.play("bgm6");
-    }, 800);
-
-    setTimeout(function() {
-        createjs.Sound.play("bgm6");
-    }, 2000);
+	createjs.Sound.play("bgm6");
 
 	setTimeout(function(){
 		stage.addChild(btn);
         createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
-		},5500);
+		},11000);
 
     setTimeout(function() {
         createjs.Sound.play("bgm3");
-    }, 5500);
+    }, 11000);
 
     setTimeout(function() {
         canClickStep = 5;
-    }, 5500);
+    }, 11000);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
