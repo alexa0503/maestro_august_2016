@@ -1,4 +1,4 @@
-///campaign/augsoc1/public/assets/
+///campaign/augsoc/public/campaign/augsoc/public/assets/
 
 //找到url中匹配的字符串
 function findInUrl(str) {
@@ -21,11 +21,11 @@ var orgnilWHeight;
 $(document).ready(function() {
     wHeight = $(window).height();
 	orgnilWHeight = $(window).height();
-	
+
 		var bli=wHeight/1109;
 		$('.page').css('-webkit-transform','scale('+bli+')');
 		$('#canvas').css('-webkit-transform','scale('+bli+')');
-		
+
 		if(wHeight<1008){
 			$('.page').css('-webkit-transform-origin',"50% 50%");
 			$('#canvas').css('-webkit-transform-origin',"50% 50%");
@@ -33,7 +33,7 @@ $(document).ready(function() {
         $('body').on('touchmove', function(e) {
             e.preventDefault();
         });
-		
+
     $('.pageOuter').height(wHeight);
     $('.page').height(wHeight);
     //$('.h1008').css('padding-top', (wHeight - 1008) / 2 + 'px');
@@ -48,78 +48,78 @@ var preload, preload2, preload3, preload4;
 //定义相关JSON格式文件列表
 function setupManifest() {
     createjs.Sound.alternateExtensions = ["mp3"];
-    createjs.Sound.registerSound({src: "/assets/images/bgm0.mp3",id: "bgm0"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm1.mp3",id: "bgm1"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm2.mp3",id: "bgm2"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm3.mp3",id: "bgm3"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm4.mp3",id: "bgm4"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm5.mp3",id: "bgm5"});
-	createjs.Sound.registerSound({src: "/assets/images/bgm6.mp3",id: "bgm6"});
+    createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm0.mp3",id: "bgm0"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm1.mp3",id: "bgm1"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm2.mp3",id: "bgm2"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm3.mp3",id: "bgm3"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm4.mp3",id: "bgm4"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm5.mp3",id: "bgm5"});
+	createjs.Sound.registerSound({src: "/campaign/augsoc/public/assets/images/bgm6.mp3",id: "bgm6"});
 
     manifest = [];
 	manifest.push({
-        src: "/assets/images/btn.png"
+        src: "/campaign/augsoc/public/assets/images/btn.png"
     });
     manifest.push({
-        src: "/assets/images/page1Img1.png"
+        src: "/campaign/augsoc/public/assets/images/page1Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page1Img1b.png"
+        src: "/campaign/augsoc/public/assets/images/page1Img1b.png"
     });
     manifest.push({
-        src: "/assets/images/topArrow.png"
+        src: "/campaign/augsoc/public/assets/images/topArrow.png"
     });
     manifest.push({
-        src: "/assets/images/shareNote.png"
-    });
-
-    manifest.push({
-        src: "/assets/images/a1/act.png"
+        src: "/campaign/augsoc/public/assets/images/shareNote.png"
     });
 
     manifest.push({
-        src: "/assets/images/page3Img1.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img11.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img12.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img13.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img14.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img15.png"
-    });
-    manifest.push({
-        src: "/assets/images/page4Img16.png"
+        src: "/campaign/augsoc/public/assets/images/a1/act.png"
     });
 
     manifest.push({
-        src: "/assets/images/page5Img11.png"
+        src: "/campaign/augsoc/public/assets/images/page3Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page5Img12.png"
+        src: "/campaign/augsoc/public/assets/images/page4Img11.png"
     });
     manifest.push({
-        src: "/assets/images/page5Img13.png"
+        src: "/campaign/augsoc/public/assets/images/page4Img12.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page4Img13.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page4Img14.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page4Img15.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page4Img16.png"
     });
 
     manifest.push({
-        src: "/assets/images/page6Img1.png"
+        src: "/campaign/augsoc/public/assets/images/page5Img11.png"
     });
     manifest.push({
-        src: "/assets/images/page7Img1.png"
+        src: "/campaign/augsoc/public/assets/images/page5Img12.png"
     });
     manifest.push({
-        src: "/assets/images/page8Img1.png"
+        src: "/campaign/augsoc/public/assets/images/page5Img13.png"
+    });
+
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page6Img1.png"
     });
     manifest.push({
-        src: "/assets/images/page9Img1.png"
+        src: "/campaign/augsoc/public/assets/images/page7Img1.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page8Img1.png"
+    });
+    manifest.push({
+        src: "/campaign/augsoc/public/assets/images/page9Img1.png"
     });
 
     startPreload();
@@ -130,11 +130,11 @@ function setupManifest2() {
     for (var j = 1; j <= 87; j=j+2) {
         if (j < 10) {
             manifest2.push({
-                src: "/assets/images/b1/b0" + j + ".png"
+                src: "/campaign/augsoc/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest2.push({
-                src: "/assets/images/b1/b" + j + ".png"
+                src: "/campaign/augsoc/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -146,11 +146,11 @@ function setupManifest3() {
     for (var i = 1; i <= 65; i=i+2) {
         if (i < 10) {
             manifest3.push({
-                src: "/assets/images/a2/a0" + i + ".png"
+                src: "/campaign/augsoc/public/assets/images/a2/a0" + i + ".png"
             });
         } else {
             manifest3.push({
-                src: "/assets/images/a2/a" + i + ".png"
+                src: "/campaign/augsoc/public/assets/images/a2/a" + i + ".png"
             });
         }
     }
@@ -163,11 +163,11 @@ function setupManifest4() {
     for (var j = 88; j <= 167; j=j+2) {
         if (j < 10) {
             manifest4.push({
-                src: "/assets/images/b1/b0" + j + ".png"
+                src: "/campaign/augsoc/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest4.push({
-                src: "/assets/images/b1/b" + j + ".png"
+                src: "/campaign/augsoc/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -315,11 +315,11 @@ var act2Numb = 65;
 var act2roolNumb = 30;
 for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
     if (i < 10) {
-        act2Arr.push("/assets/images/a2/a0" + i + ".png");
+        act2Arr.push("/campaign/augsoc/public/assets/images/a2/a0" + i + ".png");
     } else if (i <= act2Numb) {
-        act2Arr.push("/assets/images/a2/a" + i + ".png");
+        act2Arr.push("/campaign/augsoc/public/assets/images/a2/a" + i + ".png");
     } else {
-        act2Arr.push("/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
+        act2Arr.push("/campaign/augsoc/public/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
     }
 }
 
@@ -327,7 +327,7 @@ function page1Act2() {
     // Define a spritesheet. Note that this data was exported by Zoë.
 	//alert(act2Arr.toString());
 	$('body').css('background','#000');
-	
+
     var spriteSheet2 = new createjs.SpriteSheet({
         framerate: 8,
         "images": act2Arr,
@@ -345,7 +345,7 @@ function page1Act2() {
             "act23": [act2roolNumb/2+1, (act2Numb-1)/2-1, 'act22'],
         }
     });
-	
+
 	bgm2=createjs.Sound.play("bgm2");
     setTimeout(function() {
 		bgm2.stop();
@@ -381,7 +381,7 @@ function page1Act2() {
     // Add Grant to the stage, and add it as a listener to Ticker to get updates each frame.
     stage.removeChild(grant);
     stage.addChild(grant2);
-	
+
 	$("#canvas").touchwipe({
 		min_move_x: 40, //横向灵敏度
 		min_move_y: 40, //纵向灵敏度
@@ -396,9 +396,9 @@ var act3Numb = 61;
 var act3roolNumb = 53;
 for (var j = 1; j <= act3Numb; j=j+2) {
     if (j < 10) {
-        act3Arr.push("/assets/images/b1/b0" + j + ".png");
+        act3Arr.push("/campaign/augsoc/public/assets/images/b1/b0" + j + ".png");
     } else {
-        act3Arr.push("/assets/images/b1/b" + j + ".png");
+        act3Arr.push("/campaign/augsoc/public/assets/images/b1/b" + j + ".png");
     }
 }
 
@@ -420,9 +420,9 @@ function page1Act3() {
             "act31": [(act3roolNumb-1)/2, (act3Numb-1)/2 - 1, 'act31']
         }
     });
-	
+
 	bgm5=createjs.Sound.play("bgm5",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
-	
+
 	setTimeout(function(){
 		bgm5.stop();
 		bgm4=createjs.Sound.play("bgm4",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
@@ -465,9 +465,9 @@ var act4Numb2 = 167;
 var act4roolNumb = 157;
 for (var l = act4Numb; l <= act4Numb2; l=l+2) {
     if (l < 10) {
-        act4Arr.push("/assets/images/b1/b0" + l + ".png");
+        act4Arr.push("/campaign/augsoc/public/assets/images/b1/b0" + l + ".png");
     } else {
-        act4Arr.push("/assets/images/b1/b" + l + ".png");
+        act4Arr.push("/campaign/augsoc/public/assets/images/b1/b" + l + ".png");
     }
 }
 
@@ -489,7 +489,7 @@ function page1Act4() {
             "act41": [(act4roolNumb - act4Numb-1)/2, ((act4Numb2 - act4Numb-1)/2 - 1), 'act41']
         }
     });
-	
+
 	bgm4.stop();
 
     setTimeout(function() {
@@ -499,7 +499,7 @@ function page1Act4() {
     setTimeout(function() {
         createjs.Sound.play("bgm6");
     }, 2000);
-	
+
 	setTimeout(function(){
 		stage.addChild(btn);
         createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
@@ -536,7 +536,7 @@ function conctolStageClick() {
     if (canClickStep == 1) {
         canClickStep = 2;
         page1Act3();
-		ga('send', 'event', 'button', 'click', 'play2'); 
+		ga('send', 'event', 'button', 'click', 'play2');
     } else if (canClickStep == 3) {
         canClickStep = 4;
         page1Act4();
@@ -604,9 +604,9 @@ function goPage3() {
 						else{
 							rNumb=4;
 							}
-				
+
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+				$('.endImg').attr('src', '/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
@@ -615,20 +615,34 @@ function goPage3() {
 					$('.page1').hide();
 					$('.page2').hide();
 					$('.page3').fadeIn(500);
-					$('.page3Img1').delay(500).animate({
-						backgroundPosition: -(rNumb + 5) * 640
-					}, 1800 + (rNumb - 1) * 300, 'linear', function() {
-						setTimeout(function() {
-							bgm6.stop();
-							goPage4();
-						}, 1000);
-					});
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-640px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-1280px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-1920px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-2560px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-32000px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position',-(rNumb + 5) * 640+'px 0');
+					setTimeout(function(){
+						bgm6.stop();goPage4();
+						},1000);
+						},500);
+						},500);
+						},500);
+						},500);
+						},500);
+						},500);
+					//$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
 				}
 			}
 			else{
 				prizeNumb=0;
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+				$('.endImg').attr('src', '/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
@@ -652,7 +666,7 @@ function goPage3() {
 			closeLoading();
 			prizeNumb=0;
 		    $('.page4Img1').addClass('page4Img1' + rNumb);
-			$('.endImg').attr('src', '/assets/images/' + rNumb + '.gif');
+			$('.endImg').attr('src', '/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 			$('.page8Img2').addClass('page8Img2'+rNumb);
 			if (!isGo3) {
 				isGo3 = true;
@@ -780,7 +794,7 @@ function act1() {
     // Define a spritesheet. Note that this data was exported by Zoë.
     var spriteSheet = new createjs.SpriteSheet({
         framerate: 4,
-        "images": ["/assets/images/a1/act.png"],
+        "images": ["/campaign/augsoc/public/assets/images/a1/act.png"],
         "frames": {
             "regX": 0,
             "height": 1109,
@@ -793,11 +807,11 @@ function act1() {
         }
     });
 
-    downArrow = new createjs.Bitmap("/assets/images/topArrow.png");
+    downArrow = new createjs.Bitmap("/campaign/augsoc/public/assets/images/topArrow.png");
     downArrow.x = 275;
     downArrow.y = 950;
-	
-	btn = new createjs.Bitmap("/assets/images/btn.png");
+
+	btn = new createjs.Bitmap("/campaign/augsoc/public/assets/images/btn.png");
     btn.x = 450;
     btn.y = 750;
 
@@ -808,7 +822,7 @@ function act1() {
     spriteSheet.on("error", function(event) {
     	console.log("Error", event);
     });*/
-	
+
 	bgm0.stop();
     bgm1 = createjs.Sound.play("bgm1");
 
@@ -830,4 +844,6 @@ function backLottery(){
 	canClickStep=5;
 	isGo3=false;
 	rNumb = randomNumb(1, 6);
+	$('.page4Img1').removeClass('page4Img11 page4Img12 page4Img13 page4Img14 page4Img15 page4Img16');
+	$('.page8Img2').removeClass('page8Img21 page8Img22 page8Img23 page8Img24 page8Img25 page8Img26');
 	}
