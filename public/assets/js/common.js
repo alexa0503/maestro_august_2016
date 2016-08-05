@@ -496,15 +496,15 @@ function page1Act4() {
 	setTimeout(function(){
 		stage.addChild(btn);
         createjs.Tween.get(btn, {loop:false}).to({scaleX:0.5,scaleY:0.5},300,createjs.Ease.get(1));
-		},11000);
+		},8000);
 
     setTimeout(function() {
         createjs.Sound.play("bgm3");
-    }, 11000);
+    }, 8000);
 
     setTimeout(function() {
         canClickStep = 5;
-    }, 11000);
+    }, 8000);
 
     // Events from SpriteSheet (not required for the demo)
     /*spriteSheet3.on("complete", function(event) {
