@@ -615,14 +615,28 @@ function goPage3() {
 					$('.page1').hide();
 					$('.page2').hide();
 					$('.page3').fadeIn(500);
-					$('.page3Img1').delay(500).animate({
-						backgroundPosition: -(rNumb + 5) * 640
-					}, 1800 + (rNumb - 1) * 300, 'linear', function() {
-						setTimeout(function() {
-							bgm6.stop();
-							goPage4();
-						}, 1000);
-					});
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-640px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-1280px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-1920px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-2560px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position','-32000px 0');
+					setTimeout(function(){
+						$('.page3Img1').css('background-position',-(rNumb + 5) * 640+'px 0');
+					setTimeout(function(){
+						bgm6.stop();goPage4();
+						},1000);
+						},500);
+						},500);
+						},500);
+						},500);
+						},500);
+						},500);
+					//$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
 				}
 			}
 			else{
