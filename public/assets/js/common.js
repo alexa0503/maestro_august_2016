@@ -830,6 +830,6 @@ function backLottery(){
 	canClickStep=5;
 	isGo3=false;
 	rNumb = randomNumb(1, 6);
-	$('.page4Img1').removeClass('page4Img11','page4Img12','page4Img13','page4Img14','page4Img15','page4Img16');
-	$('.page8Img2').removeClass('page8Img21','page8Img22','page8Img23','page8Img24','page8Img25','page8Img26');
+	$('.page4Img1').removeClass('page4Img11 page4Img12 page4Img13 page4Img14 page4Img15 page4Img16');
+	$('.page8Img2').removeClass('page8Img21 page8Img22 page8Img23 page8Img24 page8Img25 page8Img26');
 	}
