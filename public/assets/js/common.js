@@ -1,5 +1,3 @@
-//http://campaign.maestro.com.cn/augsoc2/publichttp://campaign.maestro.com.cn/augsoc2/public/assets/
-
 //找到url中匹配的字符串
 function findInUrl(str) {
     url = location.href;
@@ -160,7 +158,7 @@ function setupManifest3() {
 
 function setupManifest4() {
     manifest4 = [];
-    for (var j = 88; j <= 167; j=j+2) {
+    for (var j = 89; j <= 167; j=j+2) {
         if (j < 10) {
             manifest4.push({
                 src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + j + ".png"
@@ -463,7 +461,7 @@ var act4Arr = [];
 var act4Numb = 62;
 var act4Numb2 = 167;
 var act4roolNumb = 157;
-for (var l = act4Numb-1; l <= act4Numb2; l=l+2) {
+for (var l = act4Numb+1; l <= act4Numb2; l=l+2) {
     if (l < 10) {
         act4Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + l + ".png");
     } else {
@@ -603,7 +601,7 @@ function goPage3() {
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
-					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+					bgm6=createjs.Sound.play("bgm6");
 					$('#canvas').fadeOut(500);
 					$('.page1').hide();
 					$('.page2').hide();
@@ -639,7 +637,7 @@ function goPage3() {
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
-					bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+					bgm6=createjs.Sound.play("bgm6");
 					$('#canvas').fadeOut(500);
 					$('.page1').hide();
 					$('.page2').hide();
@@ -677,7 +675,7 @@ function goPage3() {
 			$('.page8Img2').addClass('page8Img2'+rNumb);
 			if (!isGo3) {
 				isGo3 = true;
-				bgm6=createjs.Sound.play("bgm6",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+				bgm6=createjs.Sound.play("bgm6");
 				$('#canvas').fadeOut(500);
 				$('.page1').hide();
 				$('.page2').hide();
