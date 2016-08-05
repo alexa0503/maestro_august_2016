@@ -463,7 +463,7 @@ var act4Arr = [];
 var act4Numb = 62;
 var act4Numb2 = 167;
 var act4roolNumb = 157;
-for (var l = act4Numb; l <= act4Numb2; l=l+2) {
+for (var l = act4Numb-1; l <= act4Numb2; l=l+2) {
     if (l < 10) {
         act4Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + l + ".png");
     } else {
