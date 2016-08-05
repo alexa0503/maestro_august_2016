@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
+
 //http://dev.maestro.com.cn/campaign/augsoc/publichttp://dev.maestro.com.cn/campaign/augsoc/public/assets/
 
->>>>>>> origin/master
 //找到url中匹配的字符串
 function findInUrl(str) {
     url = location.href;
