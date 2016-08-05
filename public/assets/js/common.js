@@ -615,7 +615,7 @@ function goPage3() {
 					$('.page1').hide();
 					$('.page2').hide();
 					$('.page3').fadeIn(500);
-					setTimeout(function(){
+					/*setTimeout(function(){
 						$('.page3Img1').css('background-position','-640px 0');
 					setTimeout(function(){
 						$('.page3Img1').css('background-position','-1280px 0');
@@ -635,8 +635,8 @@ function goPage3() {
 						},500);
 						},500);
 						},500);
-						},500);
-					//$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
+						},500);*/
+					$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
 				}
 			}
 			else{
@@ -651,7 +651,7 @@ function goPage3() {
 					$('.page1').hide();
 					$('.page2').hide();
 					$('.page3').fadeIn(500);
-					setTimeout(function(){
+					/*setTimeout(function(){
 						$('.page3Img1').css('background-position','-640px 0');
 					setTimeout(function(){
 						$('.page3Img1').css('background-position','-1280px 0');
@@ -671,8 +671,8 @@ function goPage3() {
 						},500);
 						},500);
 						},500);
-						},500);
-					//$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
+						},500);*/
+					$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {bgm6.stop();goPage4();}, 1000);});
 				}
 			}
         },
@@ -689,7 +689,7 @@ function goPage3() {
 				$('.page1').hide();
 				$('.page2').hide();
 				$('.page3').fadeIn(500);
-				setTimeout(function(){
+				/*setTimeout(function(){
 						$('.page3Img1').css('background-position','-640px 0');
 					setTimeout(function(){
 						$('.page3Img1').css('background-position','-1280px 0');
@@ -709,8 +709,8 @@ function goPage3() {
 						},500);
 						},500);
 						},500);
-						},500);
-				//$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {goPage4();bgm6.stop();}, 1000);});
+						},500);*/
+				$('.page3Img1').delay(500).animate({backgroundPosition: -(rNumb + 5) * 640}, 1800 + (rNumb - 1) * 300, 'linear', function() {setTimeout(function() {goPage4();bgm6.stop();}, 1000);});
 			}
         }
     })
