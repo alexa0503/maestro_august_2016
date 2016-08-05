@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+//http://dev.maestro.com.cn/campaign/augsoc/publichttp://dev.maestro.com.cn/campaign/augsoc/public/assets/
+
+>>>>>>> origin/master
 //找到url中匹配的字符串
 function findInUrl(str) {
     url = location.href;
@@ -46,78 +51,78 @@ var preload, preload2, preload3, preload4;
 //定义相关JSON格式文件列表
 function setupManifest() {
     createjs.Sound.alternateExtensions = ["mp3"];
-    createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm0.mp3",id: "bgm0"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm1.mp3",id: "bgm1"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm2.mp3",id: "bgm2"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm3.mp3",id: "bgm3"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm4.mp3",id: "bgm4"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm5.mp3",id: "bgm5"});
-	createjs.Sound.registerSound({src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/bgm6.mp3",id: "bgm6"});
+    createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm0.mp3",id: "bgm0"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm1.mp3",id: "bgm1"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm2.mp3",id: "bgm2"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm3.mp3",id: "bgm3"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm4.mp3",id: "bgm4"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm5.mp3",id: "bgm5"});
+	createjs.Sound.registerSound({src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/bgm6.mp3",id: "bgm6"});
 
     manifest = [];
 	manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/btn.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/btn.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page1Img1.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page1Img1.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page1Img1b.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page1Img1b.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/topArrow.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/topArrow.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/shareNote.png"
-    });
-
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/a1/act.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/shareNote.png"
     });
 
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page3Img1.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img11.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img12.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img13.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img14.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img15.png"
-    });
-    manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page4Img16.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a1/act.png"
     });
 
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page5Img11.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page3Img1.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page5Img12.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img11.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page5Img13.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img12.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img13.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img14.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img15.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page4Img16.png"
     });
 
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page6Img1.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page5Img11.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page7Img1.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page5Img12.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page8Img1.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page5Img13.png"
+    });
+
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page6Img1.png"
     });
     manifest.push({
-        src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/page9Img1.png"
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page7Img1.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page8Img1.png"
+    });
+    manifest.push({
+        src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/page9Img1.png"
     });
 
     startPreload();
@@ -128,11 +133,11 @@ function setupManifest2() {
     for (var j = 1; j <= 87; j=j+2) {
         if (j < 10) {
             manifest2.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + j + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest2.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b" + j + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -144,11 +149,11 @@ function setupManifest3() {
     for (var i = 1; i <= 65; i=i+2) {
         if (i < 10) {
             manifest3.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/a2/a0" + i + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a2/a0" + i + ".png"
             });
         } else {
             manifest3.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/a2/a" + i + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a2/a" + i + ".png"
             });
         }
     }
@@ -161,11 +166,11 @@ function setupManifest4() {
     for (var j = 89; j <= 167; j=j+2) {
         if (j < 10) {
             manifest4.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + j + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b0" + j + ".png"
             });
         } else {
             manifest4.push({
-                src: "http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b" + j + ".png"
+                src: "http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b" + j + ".png"
             });
         }
     }
@@ -313,11 +318,11 @@ var act2Numb = 65;
 var act2roolNumb = 30;
 for (var i = 1; i <= act2Numb + act2roolNumb; i=i+2) {
     if (i < 10) {
-        act2Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/a2/a0" + i + ".png");
+        act2Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a2/a0" + i + ".png");
     } else if (i <= act2Numb) {
-        act2Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/a2/a" + i + ".png");
+        act2Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a2/a" + i + ".png");
     } else {
-        act2Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
+        act2Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a2/a" + (act2Numb - i + act2Numb) + ".png");
     }
 }
 
@@ -394,9 +399,9 @@ var act3Numb = 61;
 var act3roolNumb = 53;
 for (var j = 1; j <= act3Numb; j=j+2) {
     if (j < 10) {
-        act3Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + j + ".png");
+        act3Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b0" + j + ".png");
     } else {
-        act3Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b" + j + ".png");
+        act3Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b" + j + ".png");
     }
 }
 
@@ -463,9 +468,9 @@ var act4Numb2 = 167;
 var act4roolNumb = 157;
 for (var l = act4Numb+1; l <= act4Numb2; l=l+2) {
     if (l < 10) {
-        act4Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b0" + l + ".png");
+        act4Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b0" + l + ".png");
     } else {
-        act4Arr.push("http://campaign.maestro.com.cn/augsoc2/public/assets/images/b1/b" + l + ".png");
+        act4Arr.push("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/b1/b" + l + ".png");
     }
 }
 
@@ -597,7 +602,7 @@ function goPage3() {
 							}
 
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', 'http://campaign.maestro.com.cn/augsoc2/public/assets/images/' + rNumb + '.gif');
+				$('.endImg').attr('src', 'http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
@@ -633,7 +638,7 @@ function goPage3() {
 			else{
 				prizeNumb=0;
 				$('.page4Img1').addClass('page4Img1' + rNumb);
-				$('.endImg').attr('src', 'http://campaign.maestro.com.cn/augsoc2/public/assets/images/' + rNumb + '.gif');
+				$('.endImg').attr('src', 'http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 				$('.page8Img2').addClass('page8Img2'+rNumb);
 				if (!isGo3) {
 					isGo3 = true;
@@ -671,7 +676,7 @@ function goPage3() {
 			closeLoading();
 			prizeNumb=0;
 		    $('.page4Img1').addClass('page4Img1' + rNumb);
-			$('.endImg').attr('src', 'http://campaign.maestro.com.cn/augsoc2/public/assets/images/' + rNumb + '.gif');
+			$('.endImg').attr('src', 'http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/' + rNumb + '.gif');
 			$('.page8Img2').addClass('page8Img2'+rNumb);
 			if (!isGo3) {
 				isGo3 = true;
@@ -813,7 +818,7 @@ function act1() {
     // Define a spritesheet. Note that this data was exported by Zoë.
     var spriteSheet = new createjs.SpriteSheet({
         framerate: 4,
-        "images": ["http://campaign.maestro.com.cn/augsoc2/public/assets/images/a1/act.png"],
+        "images": ["http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/a1/act.png"],
         "frames": {
             "regX": 0,
             "height": 1109,
@@ -826,11 +831,11 @@ function act1() {
         }
     });
 
-    downArrow = new createjs.Bitmap("http://campaign.maestro.com.cn/augsoc2/public/assets/images/topArrow.png");
+    downArrow = new createjs.Bitmap("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/topArrow.png");
     downArrow.x = 275;
     downArrow.y = 950;
 
-	btn = new createjs.Bitmap("http://campaign.maestro.com.cn/augsoc2/public/assets/images/btn.png");
+	btn = new createjs.Bitmap("http://dev.maestro.com.cn/campaign/augsoc/public/assets/images/btn.png");
     btn.x = 450;
     btn.y = 750;
 

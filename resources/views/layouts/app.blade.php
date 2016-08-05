@@ -23,7 +23,7 @@
     <script src="{{asset('assets/js/tweenjs-0.6.2.min.js')}}"></script>
     <script src="{{asset('assets/js/soundjs-0.6.2.min.js')}}"></script>
     <script src="{{asset('assets/js/touch.js')}}"></script>
-    <script src="{{asset('assets/js/common.js')}}"></script>
+    <script src="{{asset('assets/js/common.js?v=2016080521')}}"></script>
 
     <!--移动端版本兼容 -->
     <script type="text/javascript">
